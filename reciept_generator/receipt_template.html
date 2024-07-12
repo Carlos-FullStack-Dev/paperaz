@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Receipt</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      font-size: 14px;
+      line-height: 1;
+      padding: 1rem;
+    }
+
+    h1 {
+      font-size: 24px;
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    th,
+    td {
+      border: none !important;
+      padding-top: 1rem;
+      padding-bottom: 1rem;
+      border: 1px solid #cccccc;
+      text-align: left;
+    }
+
+    th {
+      font-weight: bold;
+      background-color: #be5a5a;
+    }
+
+    .total {
+      font-weight: bold;
+      font-size: 18px;
+    }
+
+    #topLogo {
+      display: block;
+      margin: 0 auto 20px;
+    }
+
+    #buttomLogo {
+      display: block;
+    }
+
+    div {
+      display: flex;
+    }
+
+    .mainDiv {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .mainText {
+      padding-right: 10px;
+      font-size: 1rem;
+      letter-spacing: normal;
+      color: #909090;
+      display: block;
+
+    }
+
+    .mainDetail {
+      display: block;
+      padding-right: 10px;
+      font-weight: 400;
+      font-size: 28;
+      letter-spacing: normal;
+      color: #909090;
+    }
+
+    .summary {
+      background-color: rgba(95, 163, 72, 0.1);
+      padding: 3%;
+      display: block;
+      border-radius: 10px;
+      border-width: 1%;
+      border: 1px solid rgba(95, 163, 72, 0.31);
+      /* padding: 20px; */
+      margin-bottom: 20px;
+    }
+
+    hr {
+      border-top: 0.5px solid rgba(95, 163, 72, 0.31);
+      border-color: rgba(95, 163, 72, 0.31);
+
+    }
+
+    .subtext {
+      padding-right: 0px;
+      font-weight: 400;
+      font-size: 1rem;
+      color: #909090;
+      margin-top: 1rem;
+      margin-bottom: 0px;
+      text-align: center;
+    }
+
+    .thankyou {
+      font-weight: 700;
+      font-size: 50px;
+      color: #BFBFBF;
+      margin: 0px;
+      text-align: start;
+      margin-top: 1rem;
+      margin-bottom: 2rem;
+
+    }
+
+    #side {
+      justify-content: end
+    }
+
+    .table-header {
+      color: #7C7C7C;
+    }
+
+    .table-side-title {}
+
+    td {
+      width: 25%;
+    }
+  </style>
+</head>
+
+<body>
+
+  <img id="topLogo" width="350" height="80%"
+    src="https://paperdazfile.nyc3.digitaloceanspaces.com/assets/paperlink_assets/topLogo.png" alt="Logo">
+  <div class="mainDiv">
+    <div style="display: flex; align-items: center;">
+      <p class="mainText">Business Name:</p>
+      <p class="mainDetail">{{companyName}}</p>
+    </div>
+    <div style="display: flex; align-items: center;">
+      <p class="mainText">Date:</p>
+      <p class="mainDetail">{{date}}</p>
+    </div>
+  </div>
+  <div class="mainDiv">
+    <div  style="display: flex; align-items: center;">
+      <p class="mainText">Email:</p>
+      <p class="mainDetail">{{email}}</p>
+    </div>
+    <div style="display: flex; align-items: center;">
+      <p class="mainText">Invoice:</p>
+      <p class="mainDetail">{{receiptID}}</p>
+    </div>
+  </div>
+  <div class="mainDiv">
+    <div  style="display: flex; align-items: center;">
+      <p class="mainText">Payment Method:</p>
+      <p class="mainDetail">{{cardBrand}}(*** ** *** {{cardLastFourNumber}})</p>
+    </div>
+    
+  </div>
+
+
+
+
+
+
+  <div style="margin-top: 1rem;" class="summary">
+    <div>
+      <p class="mainText">Subscription:</p>
+      <p class="mainDetail">{{startDate}} to {{endDate}}</p>
+    </div>
+    <hr>
+
+    <div>
+      <table>
+        <tr>
+          <td class="table-header ">Product</td>
+          <td style="text-align: center;" class="table-header ">Cost</td>
+          <td style="text-align: center;" class="table-header ">Unit</td>
+          <td style="text-align: end;" class="table-header ">Total</td>
+        </tr>
+        <tr>
+          <td>Business Page</td>
+          <td style="text-align: center;" >${{businessPageUnitCost}} </td>
+          <td style="text-align: center;">{{businessPageNumber}} </td>
+          <td style="text-align: end;">${{businessPageTotalCost}}</td>
+        </tr>
+        <tr>
+          <td>Team Member</td>
+          <td style="text-align: center;">${{teamMembersUnitCost}}</td>
+          <td style="text-align: center;">{{teamMembersNumber}}</td>
+          <td style="text-align: end;">${{teamMembersTotalCost}}</td>
+        </tr>
+        <tr>
+          <td>Paperlink Page</td>
+          <td style="text-align: center;">${{paperlinkUnitCost}} </td>
+          <td style="text-align: center;">{{paperlinkNumber}}</td>
+          <td style="text-align: end;">${{peperlinkTotalCost}}</td>
+        </tr>
+
+      </table>
+
+    </div>
+
+    <hr>
+    <div>
+      <table>
+
+        <tr>
+          <td style="font-weight: 700;" class="table-header">Total Monthly </td>
+
+          <td style="text-align: end; text-decoration: underline;">${{totalMonthly}}</td>
+        </tr>
+
+        <tr>
+          <td>Total Annually ${{totalYearly}} - {{yearlyDiscount}} (less {{discountPercent}}%) </td>
+
+          <td style="text-align: end;">${{totalYearlyDiscounted}}</td>
+        </tr>
+
+      </table>
+
+    </div>
+
+    <hr>
+
+    <div>
+      <table>
+
+        <tr>
+          <td >Fillable PDF <span style="color: rgba(144, 144, 144, 1);"> (One time
+              charge)</span> </td>
+          <td style="text-align: center;">${{fillablePDFUnitCost}} </td>
+          <td style="text-align: center;">{{fillablePDFNumber}}</td>
+          <td style="text-align: end;">${{fillablePDFTotalCost}}</td>
+        </tr>
+        <tr>
+          <td>White Glove Service<span style="color: rgba(144, 144, 144, 1);"> (One time charge)</span> </td>
+
+          <td style="text-align: center;">${{whiteGloveUnitCost}} </td>
+          <td style="text-align: center;">{{whiteGloveNumber}} </td>
+          <td style="text-align: end;">${{whiteGloveTotalCost}}</td>
+        </tr>
+
+
+      </table>
+
+    </div>
+
+
+    <hr style="border: 0.2rem solid rgba(95, 163, 72, 0.31); border-radius: 10px;">
+    <div>
+      <table>
+
+        <tr>
+          <td style="color: #909090; font-weight: 700; font-size: 1.3rem ;" >Amount paid </td>
+          
+          <td  style="color: #909090; font-weight: 700; font-size: 1.3rem ; text-align: end;" >${{totalAmount}}</td>
+        </tr>
+      </table>
+
+    </div>
+  </div>
+  <hr>
+  <p class="thankyou">Thank you.</p>
+  
+  
+  <p class="subtext">Paperdaz LLC DBA Paperlink   1968 S Coast Highway Suite 4302, Laguna Beach, CA 92651 </p>
+
+</body>
+
+</html>

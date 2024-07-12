@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Receipt</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      font-size: 14px;
+      line-height: 1;
+      padding: 5px;
+    }
+    h1 {
+      font-size: 24px;
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    th, td {
+      padding: 10px;
+      border: 1px solid #cccccc;
+      text-align: left;
+    }
+    th {
+      font-weight: bold;
+      background-color: #be5a5a;
+    }
+    .total {
+      font-weight: bold;
+      font-size: 18px;
+    }
+    #topLogo {
+       display: block;
+       margin: 0 auto 20px;
+    }
+    #buttomLogo {
+       display: block;
+    }
+    div {
+        display: flex;
+    }
+    .mainDiv {
+        display: flex;
+        justify-content: space-between
+    }
+    .mainText {
+        padding-right:3%;
+        font-weight: 700;
+        font-size: 28;
+        letter-spacing: normal;
+        color: #909090;
+        
+    }
+    .mainDetail {
+        padding-right:3%;
+        font-weight: 400;
+        font-size: 28;
+        letter-spacing: normal;
+        color: #909090;
+    }
+    .summary {
+      background-color: #EFF6ED;
+      padding: 3%;
+      display: block;
+      border-radius: 5%;
+      border-width: 1%;
+      border: 1px solid #C2DCBB;
+      padding: 20px;
+      margin-bottom: 5%;
+    }
+    hr {
+      border-top: 0.5px solid #C2DCBB;
+      border-color: #C2DCBB;
+      
+    }
+    .subtext {
+      padding-right:0%;
+      font-weight: 400;
+      font-size: 12px;
+      color: #909090;
+      margin-bottom: 0px;
+    }
+    .thankyou {
+      font-weight: 700;
+      font-size: 50px;
+      color:#BFBFBF;
+      margin: 0px;
+
+    }
+    #side{
+      justify-content:end
+    }
+  </style>
+</head>
+<body>
+
+ <img id="topLogo"  width="250" height="100%" src="https://paperdazfile.nyc3.digitaloceanspaces.com/assets/paperlink_assets/topLogo.png" alt="Logo">
+  <div class="mainDiv" >
+    <div>
+        <p class="mainText">Receipt:</p> <p class="mainDetail">{{receiptID}}</p>
+    </div>
+     <div>
+         <p class="mainText">Date:</p> <p class="mainDetail">{{date}}</p>
+     </div>
+  </div>
+
+  <div >
+    <p class="mainText">Business:</p> <p class="mainDetail">{{companyName}}</p>
+  </div>
+
+  <div >
+    <p class="mainText">PaymentMethod:</p> <p class="mainDetail">{{cardBrand}}(*** ** *** {{cardLastFourNumber}})</p>
+  </div>
+
+  <p class="mainText">summary:</p>
+
+  <!-- <table>
+    <thead>
+      <tr>
+        <th>Item</th>
+        <th>Price</th>
+      </tr>
+    </thead>
+    
+    <tbody>
+      <tr> <td>{{name}}</td> <td id="side">{{price}}</td></tr>
+
+      <tr><td class="total" colspan="2">Total: {{total}}</td></tr>
+    </tbody>
+  </table> -->
+
+  <div class="summary">
+    <div >
+      <p class="mainText">Subscription:</p> <p class="mainDetail">{{startDate}} to {{endDate}}</p>
+    </div>
+    
+    <div class="mainDiv" >
+        <div>
+            <p class="mainDetail">paperlinks</p> 
+        </div>
+         <div>
+            <p class="mainDetail">{{paperlinks}}</p>
+         </div>
+    </div>
+    <div class="mainDiv" >
+        <div>
+            <p class="mainDetail">teamMembers</p> 
+        </div>
+         <div>
+            <p class="mainDetail">{{teamMembers}}</p>
+         </div>
+    </div>
+    <hr id="line">
+    <div class="mainDiv" >
+      <p class="mainDetail">Amount Paid</p> 
+      <p class="mainDetail">{{total}}</p>
+    </div>
+  </div>
+  <hr id="line">
+  <p class="thankyou">Thank you.</p> 
+  <img id="buttomLogo"  width="150"  src="https://paperdazfile.nyc3.digitaloceanspaces.com/assets/paperlink_assets/buttomLogo.png" alt="Logo">
+  <p class="subtext">Paperdaz</p> 
+  <p class="subtext">1968 S Coast Highway Suite 4302</p> 
+  <p class="subtext">Laguna Beach, CA 92651.</p> 
+
+</body>
+</html>

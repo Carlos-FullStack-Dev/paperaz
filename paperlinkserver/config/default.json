@@ -1,0 +1,69 @@
+{
+  "host": "localhost",
+  "port": 3030,
+  "public": "../public/",
+  "base_url": "https://backend.paperlink.app",
+  "app_url": "https://paperlink.app",
+  "admin_url": "https://admin.paperlink.app",
+  "paginate": {
+    "default": 10,
+    "max": 9999999
+  },
+  "authentication": {
+    "entity": "user",
+    "service": "users",
+    "secret": "",
+    "authStrategies": [
+      "jwt",
+      "local"
+    ],
+    "jwtOptions": {
+      "header": {
+        "typ": "access"
+      },
+      "audience": "https://yourdomain.com",
+      "issuer": "feathers",
+      "algorithm": "HS256",
+      "expiresIn": "1d"
+    },
+    "local": {
+      "usernameField": "email",
+      "passwordField": "password"
+    },
+    "oauth": {
+      "redirect": "/",
+      "google": {
+        "key": "<google oauth key>",
+        "secret": "<google oauth secret>",
+        "scope": [
+          "email",
+          "profile",
+          "openid"
+        ]
+      },
+      "facebook": {
+        "key": "<facebook oauth key>",
+        "secret": "<facebook oauth secret>"
+      },
+      "twitter": {
+        "key": "<twitter oauth key>",
+        "secret": "<twitter oauth secret>"
+      }
+    }
+  },
+  "email_user": "",
+  "email_password": "",
+  "email_from": "",
+  "email_to": "",
+  "mysql_local": "",
+  "mysql": "",
+  "policy_link": "",
+  "default_password": "",
+  "DO_SPACES_ENDPOINT": "",
+  "DO_SPACES_KEY": "",
+  "DO_SPACES_SECRET": "",
+  "DO_SPACES_BUCKET": "",
+  "STRIPE_P_Key": "",
+  "STRIPE_S_Key": "",
+  "paperdaz_connection_secret": ""
+}

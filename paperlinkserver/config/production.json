@@ -1,0 +1,14 @@
+{
+  "host": "paperdaz_feather_backend-app.feathersjs.com",
+  "port": "PORT",
+  "base_url": "https://backend.paperdaz.com",
+  "email_user":"postmaster@main.paperdaz.com",
+  "email_password":"bd237fa273702f96a28c9f74eb018bd4-c9746cf8-1ebbe0e8",
+
+  "DO_SPACES_ENDPOINT": "nyc3.digitaloceanspaces.com",
+  "DO_SPACES_KEY": "LZKW43TUS5RUZGHPZKJP",
+  "DO_SPACES_SECRET": "7RD+lbXgZjoW0CZTXBDcilajtMalZo/VGfWS94GQpuc",
+  "DO_SPACES_BUCKET": "paperdazfile",
+  "STRIPE_P_Key": "pk_test_51IfQboDeCODrNFtSaT9lm26DRv3J6KV63b7mbrE61JOpSlDapx2r0oPqR4EZMzlAkgX3EL1sw5SRU1rYtVwiBBBs00PIR73NAk",
+  "STRIPE_S_Key": "sk_test_51I5ERdC8d1ohbkjUXW7qSbN9v3qB2UnSjL4eJnHvMIrKbp4im7RPw8B3iXfjalj1VtcVwtTSFkPVfpz06S821IwP00zxJSEZoQ"
+}
